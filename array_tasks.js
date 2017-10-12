@@ -22,15 +22,32 @@ var arrayTasks = {
 			return sum + value;
 		}, 0)
 		return total;
+	},
+
+	findDuplicates: function (arr) {
+		var doublers = [];
+
+		arr.forEach(function(element, index){
+			if (arr.indexOf(element, index + 1) > -1) {
+				if (doublers.indexOf(element) === -1) {
+					doublers.push(element);
+				}
+			}
+		});
+		return doublers;
 	}
-
-	// findDuplicates: function (arr) {
-
-	// },
-
+	// 	var  newArray = arr.filter(function( e, i, arr){
+	// 		return arr.indexOf(e, i + 1) === -1;
+	//
+	// 	})
+	// 	return newArray;
+	// }
+// 	/arr = arr.filter(function (e, i, arr) {
+//     return arr.indexOf(e, i+1) === -1;
+// });
 	// removeAndClone: function (arr, valueToRemove) {
-
-	// },
+	// 	.find
+	// }
 
 	// findIndexesOf: function (arr, itemToFind) {
 
